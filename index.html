@@ -173,6 +173,12 @@ p{margin:0 0 1em}
 .stat b{font-size:clamp(2.6rem,6vw,3.6rem);font-weight:900;letter-spacing:-.04em;line-height:.9}
 .stat span{font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);max-width:19ch;line-height:1.4}
 
+/* car layout */
+.car-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,56px);align-items:start}
+.car-grid .specs{margin-top:28px}
+.car-photo{margin:6px 0 0}
+@media(max-width:840px){.car-grid{grid-template-columns:1fr;gap:30px}.car-photo{margin:0}}
+
 /* needs list */
 .needs{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:16px;margin-top:34px}
 .need{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 22px 24px}
@@ -285,7 +291,7 @@ footer a{color:rgba(255,255,255,.72)}
   <div class="wrap">
     <a class="brand" href="#top">
       <img src="logo.png" alt="">
-      <b>Drive With Caroline<span>Ilkeston &amp; 5 miles</span></b>
+      <b>Drive With Caroline<span>Ilkeston &amp; surrounding areas</span></b>
     </a>
     <nav class="navlinks" aria-label="Sections">
       <a href="#about">About me</a>
@@ -369,14 +375,23 @@ footer a{color:rgba(255,255,255,.72)}
 <section class="sec sec-alt" id="car">
   <div class="wrap">
     <p class="eyebrow">The car</p>
-    <h2 style="max-width:18ch">A white SEAT Ibiza, and you'll get to know it well.</h2>
-    <p class="prose" style="max-width:60ch;margin-top:1.2rem">You'll learn in my 2021 SEAT Ibiza Excellence &mdash; a six-speed manual. Small, light and easy to place on the road: the steering and clutch are gentle, the visibility is good and you can actually see where the corners of the car are, which makes junctions and bay parking far less daunting. It's the same car every lesson, and the car you'll sit your test in, so nothing shifts underneath you.</p>
 
-    <ul class="specs" aria-label="Car details">
-      <li><span>Car</span><b>SEAT Ibiza</b></li>
-      <li><span>Year</span><b>2021</b></li>
-      <li><span>Gearbox</span><b>Manual</b></li>
-    </ul>
+    <div class="car-grid">
+      <div>
+        <h2 style="max-width:18ch">A white SEAT Ibiza, and you'll get to know it well.</h2>
+        <p class="prose" style="max-width:60ch;margin-top:1.2rem">You'll learn in my 2021 SEAT Ibiza Excellence &mdash; a six-speed manual. Small, light and easy to place on the road: the steering and clutch are gentle, the visibility is good and you can actually see where the corners of the car are, which makes junctions and bay parking far less daunting. It's the same car every lesson, and the car you'll sit your test in, so nothing shifts underneath you.</p>
+
+        <ul class="specs" aria-label="Car details">
+          <li><span>Car</span><b>SEAT Ibiza</b></li>
+          <li><span>Year</span><b>2021</b></li>
+          <li><span>Gearbox</span><b>Manual</b></li>
+        </ul>
+      </div>
+
+      <figure class="photo-frame car-photo">
+        <img src="car.jpg" alt="Caroline's white 2021 SEAT Ibiza driving school car" width="1201" height="801" loading="lazy" decoding="async">
+      </figure>
+    </div>
 
     <div class="needs">
       <div class="need">
@@ -395,13 +410,6 @@ footer a{color:rgba(255,255,255,.72)}
         <p>Fully insured for you to drive during lessons and on test day. Nothing for you to arrange.</p>
       </div>
     </div>
-
-    <!-- Car photo — add car.jpg alongside index.html, then uncomment:
-    <figure class="photo-frame" style="margin:34px 0 0">
-      <img src="car.jpg" alt="Caroline's white 2021 SEAT Ibiza driving school car" width="1200" height="800">
-      <figcaption>The car you'll learn and take your test in</figcaption>
-    </figure>
-    -->
   </div>
 </section>
 
